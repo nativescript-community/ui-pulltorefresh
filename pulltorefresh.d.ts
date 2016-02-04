@@ -2,12 +2,15 @@
  * Contains the PullToRefresh class, which represents a Layout that contains the UI pattern for pull-to-refresh
  */
 declare module "pulltorefresh" {
+    import dependencyObservable = require("ui/core/dependency-observable");
     import view = require("ui/core/view");
-     
+    import observable = require("data/observable");
+
     /**
      * Represents a standard PullToRefresh Layout
      */
     export class PullToRefresh extends view.View implements view.AddChildFromBuilder {
+        public static isRefreshingProperty: dependencyObservable.Property;
 
         /**
          * String value used when hooking to the onRefresh event.

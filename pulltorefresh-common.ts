@@ -9,8 +9,11 @@ import platform = require("platform");
 import utils = require("utils/utils");
 import * as types from "utils/types";
 
+// on Android we explicitly set propertySettings to None because android will invalidate its layout (skip unnecessary native call).
+var AffectsLayout = platform.device.os === platform.platformNames.android ? dependencyObservable.PropertyMetadataSettings.None : dependencyObservable.PropertyMetadataSettings.AffectsLayout;
+
 export class PullToRefresh extends contentView.ContentView implements definition.PullToRefresh {
-    public static onRefreshEvent = "onRefresh";
+    public static refreshEvent = "onRefresh";
 
     public static isRefreshingProperty = new dependencyObservable.Property(
         "isRefreshing",
@@ -24,8 +27,8 @@ export class PullToRefresh extends contentView.ContentView implements definition
         new proxy.PropertyMetadata(undefined, dependencyObservable.PropertyMetadataSettings.None)
     );
 
-    constructor() {
-        super();
+    constructor(options?: definition.Options) {
+        super(options);
     }
 
     get color(): any {
@@ -39,6 +42,6 @@ export class PullToRefresh extends contentView.ContentView implements definition
         return this._getValue(PullToRefresh.isRefreshingProperty);
     }
 
-    public onRefresh() { } //TODO
+    public onRefreshEvent() { } //TODO
 
 }

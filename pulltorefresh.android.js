@@ -26,24 +26,29 @@ var PullToRefresh = (function (_super) {
     });
     PullToRefresh.prototype._createUI = function () {
         var that = new WeakRef(this);
+        console.log('that: ' + that);
         this._android = new android.support.v4.widget.SwipeRefreshLayout(this._context);
         if (!this._androidViewId) {
             this._androidViewId = android.view.View.generateViewId();
+            console.log('_androidViewId: ' + this._androidViewId);
         }
         this._android.setId(this._androidViewId);
         //if (this.color) {
         //    //var Color = android.graphics.Color;
         //    this._android.setColorSchemeColors(this.color.android, this.color.android, this.color.android, this.color.android);
         //}
-        if (this.onRefresh) {
+        if (this.onRefreshEvent) {
+            console.log('this.onRefreshEvent = ' + this.onRefreshEvent);
             this._android.setOnRefreshListener(new android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener({
                 get owner() {
                     return that.get();
                 },
                 onRefresh: function (v) {
-                    if (this.owner) {
-                        this.owner._emit(common.PullToRefresh.onRefreshEvent);
-                    }
+                    console.log('onRefresh: (v) = ' + v);
+                    //if (this.owner) {
+                    console.log('this.owner._emit() = ' + common.PullToRefresh.refreshEvent);
+                    this.owner._emit(common.PullToRefresh.refreshEvent);
+                    //}
                 }
             }));
         }
