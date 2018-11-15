@@ -8,4 +8,4 @@ publish() {
     npm publish *.tgz
 }
 
-./pack.sh && publish
+sh ./pack.sh && publish
