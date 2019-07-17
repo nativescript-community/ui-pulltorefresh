@@ -10,7 +10,7 @@ import {
 
 export * from './pulltorefresh-common';
 
-class CarouselFriendlySwipeRefreshLayout extends android.support.v4.widget
+class CarouselFriendlySwipeRefreshLayout extends androidx.swiperefreshlayout.widget
   .SwipeRefreshLayout {
   private _touchSlop: number;
   private _previousX: number;
@@ -107,7 +107,7 @@ export class PullToRefresh extends PullToRefreshBase {
 }
 
 @Interfaces([
-  (android.support.v4.widget as any).SwipeRefreshLayout.OnRefreshListener
+  androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 ])
 class TNS_SwipeRefreshListener extends java.lang.Object {
   constructor(private owner: WeakRef<PullToRefresh>) {
