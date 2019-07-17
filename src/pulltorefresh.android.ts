@@ -1,14 +1,52 @@
-/// <reference path="./node_modules/tns-platform-declarations/android/android.d.ts" />
+/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
 
-import { Color } from "tns-core-modules/color";
+import { Color } from 'tns-core-modules/color';
 import {
   PullToRefreshBase,
   backgroundColorProperty,
   colorProperty,
   refreshingProperty
-} from "./pulltorefresh-common";
+} from './pulltorefresh-common';
 
-export * from "./pulltorefresh-common";
+export * from './pulltorefresh-common';
+
+class CarouselFriendlySwipeRefreshLayout extends android.support.v4.widget
+  .SwipeRefreshLayout {
+  private _touchSlop: number;
+  private _previousX: number;
+
+  public constructor(
+    context: android.content.Context,
+    attrs: android.util.AttributeSet
+  ) {
+    super(context, attrs);
+
+    this._touchSlop = android.view.ViewConfiguration.get(
+      context
+    ).getScaledTouchSlop();
+  }
+
+  public onInterceptTouchEvent(event: android.view.MotionEvent): boolean {
+    switch (event.getAction()) {
+      case android.view.MotionEvent.ACTION_DOWN: {
+        this._previousX = android.view.MotionEvent.obtain(event).getX();
+        break;
+      }
+      case android.view.MotionEvent.ACTION_MOVE: {
+        const eventX = event.getX();
+        const xDifference = Math.abs(eventX - this._previousX);
+
+        if (xDifference > this._touchSlop) {
+          return false;
+        }
+
+        break;
+      }
+    }
+
+    return super.onInterceptTouchEvent(event);
+  }
+}
 
 export class PullToRefresh extends PullToRefreshBase {
   private _androidViewId: number;
@@ -20,8 +58,9 @@ export class PullToRefresh extends PullToRefreshBase {
   }
 
   public createNativeView() {
-    const swipeRefreshLayout = new (android.support.v4
-      .widget as any).SwipeRefreshLayout(this._context);
+    const swipeRefreshLayout = new (CarouselFriendlySwipeRefreshLayout as any)(
+      this._context
+    );
 
     if (!this._androidViewId) {
       this._androidViewId = android.view.View.generateViewId();
@@ -70,7 +109,6 @@ export class PullToRefresh extends PullToRefreshBase {
 @Interfaces([
   (android.support.v4.widget as any).SwipeRefreshLayout.OnRefreshListener
 ])
-// tslint:disable-next-line:class-name
 class TNS_SwipeRefreshListener extends java.lang.Object {
   constructor(private owner: WeakRef<PullToRefresh>) {
     super();

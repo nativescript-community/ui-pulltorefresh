@@ -1,9 +1,8 @@
 [![npm](https://img.shields.io/npm/v/nativescript-pulltorefresh.svg)](https://www.npmjs.com/package/nativescript-pulltorefresh)
 [![npm](https://img.shields.io/npm/dt/nativescript-pulltorefresh.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-pulltorefresh)
+[![Build Status](https://travis-ci.org/bradmartin/nativescript-pulltorefresh.svg?branch=master)](https://travis-ci.org/bradmartin/nativescript-pulltorefresh)
 [![GitHub stars](https://img.shields.io/github/stars/bradmartin/nativescript-pulltorefresh.svg)](https://github.com/bradmartin/nativescript-pulltorefresh/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/bradmartin/nativescript-pulltorefresh.svg)](https://github.com/bradmartin/nativescript-pulltorefresh/network)
 [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/bradwayne88)
-
 
 # NativeScript-PullToRefresh :recycle:
 
@@ -95,43 +94,46 @@ refreshList(args) {
 ```javascript
 import Vue from 'nativescript-vue';
 
-Vue.registerElement('PullToRefresh', () => require('nativescript-pulltorefresh').PullToRefresh);
+Vue.registerElement(
+  'PullToRefresh',
+  () => require('nativescript-pulltorefresh').PullToRefresh
+);
 ```
 
 #### Component
 
 ```vue
 <template>
-    <Page>
-        <PullToRefresh @refresh="refreshList">
-          <ListView for="item in listOfItems" @itemTap="onItemTap">
-            <v-template>
-              <!-- Shows the list item label in the default color and style. -->
-              <Label :text="item.text" />
-            </v-template>
-          </ListView>
-        </PullToRefresh>
-    </Page>
+  <Page>
+    <PullToRefresh @refresh="refreshList">
+      <ListView for="item in listOfItems" @itemTap="onItemTap">
+        <v-template>
+          <!-- Shows the list item label in the default color and style. -->
+          <label :text="item.text" />
+        </v-template>
+      </ListView>
+    </PullToRefresh>
+  </Page>
 </template>
 
 <script>
 export default {
-    methods: {
-        refreshList(args) {
-            var pullRefresh = args.object;
-            setTimeout(function () {
-                pullRefresh.refreshing = false;
-            }, 1000);
-        }
+  methods: {
+    refreshList(args) {
+      var pullRefresh = args.object;
+      setTimeout(function() {
+        pullRefresh.refreshing = false;
+      }, 1000);
     }
-}
+  }
+};
 </script>
 ```
 
 ### Webpack
 
 If you are using webpack with **uglify** for Android, you must add
-[TNS_wipeRefreshListener](./pulltorefresh.android.ts#L72) to the mangle exception
+[TNS_SwipeRefreshListener](./src/pulltorefresh.android.ts#L73) to the mangle exception
 list.
 
 #### webpack.config.js
@@ -153,6 +155,8 @@ if (uglify) {
 
 ## Properties
 
-* **refresh : function** _required_
-* **refreshing: boolean** - Notifies the widget that the refresh state has
+- **refresh : function** _required_
+- **refreshing: boolean** - Notifies the widget that the refresh state has
   changed.
+
+## [Changelog](./CHANGELOG.md)
