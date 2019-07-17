@@ -1,6 +1,6 @@
 {
   "name": "nativescript-akylas-pulltorefresh",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "A NativeScript plugin to provide the Pull to Refresh control on any view.",
   "main": "pulltorefresh",
   "typings": "index.d.ts",
@@ -106,9 +106,9 @@
     "nativescript-ui-listview": "^5.2.0",
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
-    "tns-core-modules": "^5.2.2",
-    "tns-platform-declarations": "^5.2.2",
-    "tslint": "~5.13.1",
-    "typescript": "~3.1.6"
+    "tns-core-modules": "^6.0.1",
+    "tns-platform-declarations": "^6.0.1",
+    "tslint": "~5.18.0",
+    "typescript": "~3.5.3"
   }
 }
