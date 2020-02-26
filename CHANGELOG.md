@@ -1,5 +1,55 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 2.3.2 (2020-02-26)
+
+
+### Bug Fixes
+
+* **ios:** remove UIWebView references since it's deprecated ([ecca5a3](https://github.com/nstudio/nativescript-pulltorefresh/commit/ecca5a31f24679455ba4852482ae3c1d25dc63d2))
+
+
+
+## 1.0.1 (2019-07-17)
+
+
+### Bug Fixes
+
+* **#29:** implement a carousel friendly swipe refresh layout ([d0bb135](https://github.com/nstudio/nativescript-pulltorefresh/commit/d0bb13560721497d214097b435ea7472bd118cd7)), closes [#29](https://github.com/nstudio/nativescript-pulltorefresh/issues/29)
+
+
+
+## 2.2.1 (2019-03-05)
+
+
+
+# 2.2.0 (2018-11-15)
+
+
+### Features
+
+* **TNS4:** Allow Nativescript 4 ([515daa4](https://github.com/nstudio/nativescript-pulltorefresh/commit/515daa4cc9f4e7fa450485416e1646c513087e9c))
+
+
+
+# 2.1.0 (2018-02-12)
+
+
+
+## 1.1.10 (2017-03-06)
+
+
+
+## 1.1.8 (2016-09-08)
+
+
+
+
+
+# Change Log
+
 ## [1.0.1](https://github.com/nstudio/nativescript-pulltorefresh/tree/1.0.1) (2019-07-17)
 [Full Changelog](https://github.com/nstudio/nativescript-pulltorefresh/compare/2.2.2...1.0.1)
 
