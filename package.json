@@ -17,19 +17,12 @@
     }
   },
   "scripts": {
-    "tsc": "tsc -skipLibCheck",
-    "build": "npm i && tsc",
-    "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
-    "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
-    "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\" --exclude \"*demo*/platforms/**\"",
-    "setup": "npm i && tsc && cd ../demo && npm i && tsc",
-    "demo.ios": "cd ../demo && tns run ios",
-    "demo.android": "cd ../demo && tns run android",
-    "publish": "cd ../publish && ./publish.sh",
-    "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
-    "development.setup": "npm run setup && npm link && cd ../demo && npm link nativescript-pulltorefresh && cd ../src",
-    "generate.typings.ios": "cd ../demo && TNS_DEBUG_METADATA_PATH=\"$(pwd)/metadata\" tns build ios && TNS_TYPESCRIPT_DECLARATIONS_PATH=\"$(pwd)/typings\" tns build ios && echo 'Now look for your library typings in demo/typings!'",
-    "make-changelog": "cd ../ && github_changelog_generator -u nstudio -p nativescript-pulltorefresh --token"
+    "ngc": "NODE_OPTIONS=--max_old_space_size=8192 ./node_modules/.bin/ngc --project tsconfig.aot.json",
+    "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && cp README.md plugin && tsc -skipLibCheck",
+    "clean": "rimraf ./plugin/**/*.d.ts ./plugin/**/*.js ./plugin/**/*.js.map ./plugin/**/*.metadata.json plugin/node_modules plugin/package-lock.json",
+    "build": "npm run tsc && npm run ngc",
+    "publish": "npm run build && lerna publish",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "lint-staged": {
     "**/*.{js, css, ts, json, scss, html, xml, md}": [
@@ -68,14 +61,20 @@
   "bugs": "https://github.com/nstudio/nativescript-pulltorefresh/issues",
   "homepage": "https://github.com/nstudio/nativescript-pulltorefresh",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "cpy-cli": "^3.1.0",
     "husky": "^4.2.3",
+    "lerna": "^3.20.2",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "nativescript-ui-listview": "~8.0.1",
     "rimraf": "^3.0.2",
     "@nativescript/core": "^6.4.1",
     "tns-platform-declarations": "^6.4.1",
-    "tslint": "~6.0.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
     "typescript": "~3.8.2"
   }
 }

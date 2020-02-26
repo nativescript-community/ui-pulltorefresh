@@ -1,29 +1,46 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "removeComments": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "noLib": false,
-    "noEmitHelpers": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noEmitOnError": false,
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noFallthroughCasesInSwitch": true,
-    "lib": ["es6", "dom"],
-    "baseUrl": "./src",
-    "paths": {
-      "*": ["./node_modules/*"]
-    }
+      "target": "es5",
+      "module": "commonjs",
+      "declaration": true,
+      "removeComments": true,
+      "noLib": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": [
+          "es6",
+          "dom"
+      ],
+      "sourceMap": true,
+      "pretty": true,
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "noEmitHelpers": true,
+      "noEmitOnError": false,
+      "noImplicitAny": false,
+      "noImplicitReturns": true,
+      "noImplicitUseStrict": false,
+      "noFallthroughCasesInSwitch": true,
+      "baseUrl": ".",
+      "outDir": "./plugin",
+      "rootDir": "src",
+      "paths": {
+          "*": [
+              "./node_modules/*"
+          ],
+          "tns-core-modules": ["./node_modules/@nativescript/core"],
+          "tns-core-modules/*": ["./node_modules/@nativescript/core/*"]
+      }
   },
-  "include": ["src", "references.d.ts"],
-  "exclude": ["node_modules", "platforms"],
+  "include": [
+      "src/**/*.ts",
+      "references.d.ts",
+      "src/references.d.ts"
+  ],
+  "exclude": [
+      "node_modules",
+      ".git",
+      "dist"
+  ],
   "compileOnSave": false
 }

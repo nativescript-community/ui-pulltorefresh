@@ -1,0 +1,44 @@
+{
+  "name": "nativescript-akylas-pulltorefresh",
+  "version": "2.3.1",
+  "description": "A NativeScript plugin to provide the Pull to Refresh control on any view.",
+  "main": "pulltorefresh",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "3.0.1",
+      "android": "3.0.1"
+    },
+    "plugin": {
+      "nan": "true",
+      "pan": "true",
+      "core3": "true",
+      "category": "Interface"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akylas/nativescript-pulltorefresh"
+  },
+  "keywords": [
+    "NativeScript",
+    "native",
+    "script",
+    "Pull Refresh",
+    "SwipeRefreshLayout",
+    "Material Design",
+    "UIRefreshControl",
+    "android",
+    "ios",
+    "bradmartin"
+  ],
+  "author": {
+    "name": "Brad Martin",
+    "email": "bradwaynemartin@gmail.com",
+    "url": "https://github.com/bradmartin"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": "https://github.com/akylas/nativescript-pulltorefresh/issues",
+  "homepage": "https://github.com/akylas/nativescript-pulltorefresh"
+}
