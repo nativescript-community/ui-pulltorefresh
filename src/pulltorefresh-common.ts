@@ -1,8 +1,8 @@
-import { ContentView } from 'tns-core-modules/ui/content-view';
-import { Property, View } from 'tns-core-modules/ui/core/view';
+import { ContentView } from '@nativescript/core/ui/content-view';
+import { Property, View } from '@nativescript/core/ui/core/view';
 import { PullToRefresh as PullToRefreshDefinition } from '.';
 
-export * from 'tns-core-modules/ui/content-view';
+export * from '@nativescript/core/ui/content-view';
 
 export class PullToRefreshBase extends ContentView
   implements PullToRefreshDefinition {
