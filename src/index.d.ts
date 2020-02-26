@@ -1,6 +1,6 @@
-import { ContentView } from 'tns-core-modules/ui/content-view';
+import { ContentView } from '@nativescript/core/ui/content-view';
 
-export * from 'tns-core-modules/ui/content-view';
+export * from '@nativescript/core/ui/content-view';
 
 /**
  * Contains the PullToRefresh class, which represents a Layout that contains the UI pattern for pull-to-refresh
