@@ -40,3 +40,4 @@ demo/report/report.html
 demo/report/stats.json
 !demo/webpack.config.js
 *.aar
+/pnpm-lock.yaml
