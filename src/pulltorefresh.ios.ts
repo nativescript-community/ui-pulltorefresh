@@ -1,12 +1,9 @@
-/// <reference path="./node_modules/tns-platform-declarations/ios.d.ts" />
-/// <reference path="./node_modules/nativescript-ui-listview/platforms/ios/typings/listview.d.ts" />
-
-import { ios as iosUtils } from 'tns-core-modules/utils/utils';
-import { Color } from 'tns-core-modules/color';
+import { Color } from '@nativescript/core/color';
+import { ios as iosUtils } from '@nativescript/core/utils/utils';
 import {
-  PullToRefreshBase,
   backgroundColorProperty,
   colorProperty,
+  PullToRefreshBase,
   refreshingProperty
 } from './pulltorefresh-common';
 
@@ -69,7 +66,7 @@ export class PullToRefresh extends PullToRefreshBase {
 
         this.content.ios.addSubview(this.refreshControl);
       }
-    } else if (this.content.ios instanceof UIWebView) {
+    } else if (this.content.ios instanceof WKWebView) {
       if (SUPPORT_REFRESH_CONTROL) {
         this.content.ios.scrollView.refreshControl = this.refreshControl;
       } else {
@@ -101,7 +98,7 @@ export class PullToRefresh extends PullToRefreshBase {
       }
     } else {
       throw new Error(
-        'Content must inherit from either UIScrollView, UIWebView or WKWebView!'
+        'Content must inherit from either UIScrollView or WKWebView!'
       );
     }
   }
