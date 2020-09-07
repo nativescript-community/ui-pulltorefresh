@@ -1,17 +1,17 @@
 import { Color } from '@nativescript/core/color';
-import { ios as iosUtils } from '@nativescript/core/utils/utils';
 import {
   backgroundColorProperty,
   colorProperty,
-  PullToRefreshBase,
-  refreshingProperty
-} from './pulltorefresh-common';
+  Utils,
+} from '@nativescript/core';
+import { PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
 export * from './pulltorefresh-common';
 
+@NativeClass
 class PullToRefreshHandler extends NSObject {
   public static ObjCExposedMethods = {
-    handleRefresh: { returns: interop.types.void, params: [UIRefreshControl] }
+    handleRefresh: { returns: interop.types.void, params: [UIRefreshControl] },
   };
 
   private _owner: WeakRef<PullToRefresh>;
@@ -29,12 +29,12 @@ class PullToRefreshHandler extends NSObject {
     pullToRefresh.refreshing = true;
     pullToRefresh.notify({
       eventName: PullToRefreshBase.refreshEvent,
-      object: pullToRefresh
+      object: pullToRefresh,
     });
   }
 }
 
-const SUPPORT_REFRESH_CONTROL = iosUtils.MajorVersion >= 10;
+const SUPPORT_REFRESH_CONTROL = Utils.ios.MajorVersion >= 10;
 
 export class PullToRefresh extends PullToRefreshBase {
   private _handler: PullToRefreshHandler;

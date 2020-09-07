@@ -1,16 +1,10 @@
+import { backgroundColorProperty, colorProperty } from '@nativescript/core';
 import { Color } from '@nativescript/core/color';
-import {
-  backgroundColorProperty,
-  colorProperty,
-  PullToRefreshBase,
-  refreshingProperty
-} from './pulltorefresh-common';
+import { PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
 export * from './pulltorefresh-common';
 
-
 export class PullToRefresh extends PullToRefreshBase {
-
   public nativeView: com.nativescript.swiperefreshlayout.CarouselFriendlySwipeRefreshLayout;
 
   get android() {
@@ -31,14 +25,13 @@ export class PullToRefresh extends PullToRefreshBase {
     const nativeView = this.nativeView as any;
     const androidXListener = new androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener(
       {
-        onRefresh:()=> {
-
-            this.refreshing = true;
-            this.notify({
-              eventName: PullToRefreshBase.refreshEvent,
-              object: this
-            });
-          }
+        onRefresh: () => {
+          this.refreshing = true;
+          this.notify({
+            eventName: PullToRefreshBase.refreshEvent,
+            object: this,
+          });
+        },
       }
     );
     nativeView.setOnRefreshListener(androidXListener);
