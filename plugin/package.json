@@ -1,6 +1,6 @@
 {
   "name": "@akylas/nativescript-pulltorefresh",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "description": "A NativeScript plugin to provide the Pull to Refresh control on any view.",
   "main": "pulltorefresh",
   "typings": "index.d.ts",
