@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 2.3.2 (2020-02-26)
 
-**Note:** Version bump only for package nativescript-akylas-pulltorefresh
+**Note:** Version bump only for package @akylas/nativescript-pulltorefresh

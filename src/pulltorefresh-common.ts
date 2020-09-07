@@ -4,7 +4,8 @@ import { PullToRefresh as PullToRefreshDefinition } from '.';
 
 export * from '@nativescript/core/ui/content-view';
 
-export class PullToRefreshBase extends ContentView
+export class PullToRefreshBase
+  extends ContentView
   implements PullToRefreshDefinition {
   public static refreshEvent = 'refresh';
 
@@ -27,6 +28,6 @@ export class PullToRefreshBase extends ContentView
 
 export const refreshingProperty = new Property<PullToRefreshBase, boolean>({
   name: 'refreshing',
-  defaultValue: false
+  defaultValue: false,
 });
 refreshingProperty.register(PullToRefreshBase);
