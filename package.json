@@ -24,17 +24,6 @@
     "publish": "npm run setup && npm run build && lerna publish",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
-  "lint-staged": {
-    "**/*.{js, css, ts, json, scss, html, xml, md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Akylas/nativescript-pulltorefresh"
