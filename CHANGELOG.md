@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/Akylas/nativescript-pulltorefresh/compare/v2.4.0...v2.4.1) (2020-09-30)
+
+
+### Bug Fixes
+
+* **ios:** fix crash on dynamic addition ([a3613de](https://github.com/Akylas/nativescript-pulltorefresh/commit/a3613dea6432913bf6a2cf98389cd0ec16a96641))
+
+
+
+
+
 # [2.4.0](https://github.com/Akylas/nativescript-pulltorefresh/compare/v2.3.2...v2.4.0) (2020-09-07)
 
 
