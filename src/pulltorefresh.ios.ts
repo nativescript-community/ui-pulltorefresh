@@ -3,6 +3,7 @@ import {
   backgroundColorProperty,
   colorProperty,
   Utils,
+  View,
 } from '@nativescript/core';
 import { PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
@@ -40,61 +41,93 @@ export class PullToRefresh extends PullToRefreshBase {
   private _handler: PullToRefreshHandler;
 
   // NOTE: We cannot use the default ios property as the UIRefreshControl can be added only to UIScrollViews!
-  public refreshControl: UIRefreshControl;
+  public nativeViewProtected: UIRefreshControl;
 
-  constructor() {
-    super();
+  createNativeView() {
+    return UIRefreshControl.alloc().init();
+  }
 
-    this.refreshControl = UIRefreshControl.alloc().init();
+  initNativeView() {
+    super.initNativeView();
     this._handler = PullToRefreshHandler.initWithOnwer(new WeakRef(this));
-    this.refreshControl.addTargetActionForControlEvents(
+    this.nativeViewProtected.addTargetActionForControlEvents(
       this._handler,
       'handleRefresh',
       UIControlEvents.ValueChanged
     );
   }
+  disposeNativeView() {
+    if (this._handler) {
+      this.nativeViewProtected.removeTargetActionForControlEvents(
+        this._handler,
+        'handleRefresh',
+        UIControlEvents.ValueChanged
+      );
+      this._handler = null;
+    }
 
-  public onLoaded() {
-    super.onLoaded();
+    super.disposeNativeView();
+  }
 
-    if (this.content.ios instanceof UIScrollView) {
+  //@private
+  /**
+   * Called when the content property has changed.
+   * @private
+   * @param oldView The previous content.
+   * @param newView The new content.
+   */
+  public _onContentChanged(oldView: View, newView: View) {
+    // super._onContentChanged(oldView, newView);
+
+    if (!newView) {
+      return;
+    }
+    const nNativeView = newView.nativeViewProtected;
+
+    if (nNativeView instanceof UIScrollView) {
       if (SUPPORT_REFRESH_CONTROL) {
-        this.content.ios.refreshControl = this.refreshControl;
+        nNativeView.refreshControl = this.nativeViewProtected;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        this.content.ios.alwaysBounceVertical = true;
+        nNativeView.alwaysBounceVertical = true;
 
-        this.content.ios.addSubview(this.refreshControl);
+        nNativeView.addSubview(this.nativeViewProtected);
       }
-    } else if (this.content.ios instanceof WKWebView) {
+    } else if (nNativeView instanceof WKWebView) {
       if (SUPPORT_REFRESH_CONTROL) {
-        this.content.ios.scrollView.refreshControl = this.refreshControl;
+        nNativeView.scrollView.refreshControl = this.nativeViewProtected;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        this.content.ios.scrollView.alwaysBounceVertical = true;
+        nNativeView.scrollView.alwaysBounceVertical = true;
 
-        this.content.ios.scrollView.addSubview(this.refreshControl);
+        nNativeView.scrollView.addSubview(
+          this.nativeViewProtected
+        );
       }
     } else if (
       typeof TKListView !== 'undefined' &&
-      this.content.ios instanceof TKListView
+      nNativeView instanceof TKListView
     ) {
       if (SUPPORT_REFRESH_CONTROL) {
-        this.content.ios.collectionView.refreshControl = this.refreshControl;
+        nNativeView.collectionView.refreshControl = this.nativeViewProtected;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        this.content.ios.collectionView.alwaysBounceVertical = true;
+        nNativeView.collectionView.alwaysBounceVertical = true;
 
-        this.content.ios.collectionView.addSubview(this.refreshControl);
+        nNativeView.collectionView.addSubview(
+          this.nativeViewProtected
+        );
       }
-    } else if (this.content.ios instanceof WKWebView) {
+    } else if (nNativeView instanceof WKWebView) {
       if (SUPPORT_REFRESH_CONTROL) {
-        this.content.ios.scrollView.refreshControl = this.refreshControl;
+        nNativeView.scrollView.refreshControl = this.nativeViewProtected;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        this.content.ios.scrollView.alwaysBounceVertical = true;
+        nNativeView.scrollView.alwaysBounceVertical = true;
 
-        this.content.ios.scrollView.addSubview(this.refreshControl);
+        nNativeView.scrollView.addSubview(
+          this.nativeViewProtected
+        );
       }
     } else {
       throw new Error(
@@ -108,27 +141,27 @@ export class PullToRefresh extends PullToRefreshBase {
   }
   [refreshingProperty.setNative](value: boolean) {
     if (value) {
-      this.refreshControl.beginRefreshing();
+      this.nativeViewProtected.beginRefreshing();
     } else {
-      this.refreshControl.endRefreshing();
+      this.nativeViewProtected.endRefreshing();
     }
   }
 
   [colorProperty.getDefault](): UIColor {
-    return this.refreshControl.tintColor;
+    return this.nativeViewProtected.tintColor;
   }
   [colorProperty.setNative](value: Color | UIColor) {
     const color = value instanceof Color ? value.ios : value;
 
-    this.refreshControl.tintColor = color;
+    this.nativeViewProtected.tintColor = color;
   }
 
   [backgroundColorProperty.getDefault](): UIColor {
-    return this.refreshControl.backgroundColor;
+    return this.nativeViewProtected.backgroundColor;
   }
   [backgroundColorProperty.setNative](value: Color | UIColor) {
     const color = value instanceof Color ? value.ios : value;
 
-    this.refreshControl.backgroundColor = color;
+    this.nativeViewProtected.backgroundColor = color;
   }
 }
