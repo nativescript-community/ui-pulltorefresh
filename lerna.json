@@ -2,7 +2,7 @@
   "packages": [
     "plugin"
   ],
-  "version": "2.4.1",
+  "version": "2.4.2",
   "command": {
     "publish": {
       "conventionalCommits": true
