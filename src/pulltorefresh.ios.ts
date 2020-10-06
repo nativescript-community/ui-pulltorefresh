@@ -55,8 +55,12 @@ export class PullToRefresh extends PullToRefreshBase {
     );
   }
 
-  public _onContentChanged(oldView: View, newView: View) {
-    if (!newView) {
+  onLoaded() {
+    super.onLoaded();
+    this._onContentChanged(null, this.content);
+  }
+  _onContentChanged(oldView, newView) {
+    if (!newView || !newView.nativeViewProtected) {
       return;
     }
     const nNewView = newView.nativeViewProtected;
