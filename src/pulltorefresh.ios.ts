@@ -3,7 +3,6 @@ import {
   backgroundColorProperty,
   colorProperty,
   Utils,
-  View,
 } from '@nativescript/core';
 import { PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
