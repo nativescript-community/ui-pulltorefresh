@@ -42,3 +42,4 @@ demo/report/stats.json
 *.aar
 /pnpm-lock.yaml
 plugin/*.d.ts
+plugin/**/*.d.ts
