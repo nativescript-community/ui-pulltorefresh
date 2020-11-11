@@ -7,6 +7,7 @@ export * from './pulltorefresh-common';
 export class PullToRefresh extends PullToRefreshBase {
   public nativeView: com.nativescript.swiperefreshlayout.CarouselFriendlySwipeRefreshLayout;
 
+  //@ts-ignore
   get android() {
     return this.nativeView;
   }
