@@ -1,6 +1,7 @@
-import { ContentView, Property, View } from '@nativescript/core';
+import { ContentView, CSSType, Property, View } from '@nativescript/core';
 import { PullToRefresh as PullToRefreshDefinition } from '.';
 
+@CSSType('PullToRefresh')
 export class PullToRefreshBase
   extends ContentView
   implements PullToRefreshDefinition {
