@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.6](https://github.com/Akylas/nativescript-pulltorefresh/compare/v2.4.5...v2.4.6) (2021-03-14)
+
+
+### Bug Fixes
+
+* css support ([61330dc](https://github.com/Akylas/nativescript-pulltorefresh/commit/61330dc7174a9875a418c89554294f5c2c501d0e))
+
+
+
+
+
 ## [2.4.5](https://github.com/Akylas/nativescript-pulltorefresh/compare/v2.4.4...v2.4.5) (2020-11-11)
 
 
