@@ -32,7 +32,7 @@ NativeScript plugin to use Pull to Refresh on any view.
 
 ## Installation
 
-`tns plugin add @Akylas/nativescript-pulltorefresh`
+`tns plugin add @akylas/nativescript-pulltorefresh`
 
 #### [Android - _SwipeRefreshLayout_](http://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)
 
