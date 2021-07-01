@@ -1,4 +1,4 @@
-<a align="center" href="https://www.npmjs.com/package/@Akylas/nativescript-pulltorefresh">
+<a align="center" href="https://www.npmjs.com/package/@nativescript-community/ui-pulltorefresh">
     <h2 align="center">NativeScript-PullToRefresh</h2>
 </a>
 <h4 align="center">
@@ -6,20 +6,20 @@ NativeScript plugin to use Pull to Refresh on any view.
 </h4>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@Akylas/nativescript-pulltorefresh">
-        <img src="https://img.shields.io/npm/v/@Akylas/nativescript-pulltorefresh.svg" alt="npm">
+    <a href="https://www.npmjs.com/package/@nativescript-community/ui-pulltorefresh">
+        <img src="https://img.shields.io/npm/v/@nativescript-community/ui-pulltorefresh.svg" alt="npm">
     </a>
-    <a href="https://www.npmjs.com/package/@Akylas/nativescript-pulltorefresh">
-        <img src="https://img.shields.io/npm/dt/@Akylas/nativescript-pulltorefresh.svg?label=npm%20downloads" alt="npm">
+    <a href="https://www.npmjs.com/package/@nativescript-community/ui-pulltorefresh">
+        <img src="https://img.shields.io/npm/dt/@nativescript-community/ui-pulltorefresh.svg?label=npm%20downloads" alt="npm">
     </a>
-    <a href="https://github.com/Akylas/nativescript-pulltorefresh/stargazers">
-        <img src="https://img.shields.io/github/stars/Akylas/nativescript-pulltorefresh.svg" alt="stars">
+    <a href="https://github.com/nativescript-community/ui-pulltorefresh/stargazers">
+        <img src="https://img.shields.io/github/stars/nativescript-community/ui-pulltorefresh.svg" alt="stars">
     </a>
-     <a href="https://github.com/Akylas/nativescript-pulltorefresh/network">
-        <img src="https://img.shields.io/github/forks/Akylas/nativescript-pulltorefresh.svg" alt="forks">
+     <a href="https://github.com/nativescript-community/ui-pulltorefresh/network">
+        <img src="https://img.shields.io/github/forks/nativescript-community/ui-pulltorefresh.svg" alt="forks">
     </a>
-    <a href="https://github.com/Akylas/nativescript-pulltorefresh/blob/master/LICENSE">
-        <img src="https://img.shields.io/github/license/Akylas/nativescript-pulltorefresh.svg" alt="license">
+    <a href="https://github.com/nativescript-community/ui-pulltorefresh/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/nativescript-community/ui-pulltorefresh.svg" alt="license">
     </a>
     <a href="https://nstudio.io">
       <img src="https://github.com/nstudio/media/blob/master/images/nstudio-banner.png?raw=true" alt="nStudio banner">
@@ -32,7 +32,7 @@ NativeScript plugin to use Pull to Refresh on any view.
 
 ## Installation
 
-`tns plugin add @Akylas/nativescript-pulltorefresh`
+`tns plugin add @nativescript-community/ui-pulltorefresh`
 
 #### [Android - _SwipeRefreshLayout_](http://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)
 
@@ -52,7 +52,7 @@ NativeScript plugin to use Pull to Refresh on any view.
 
 ```xml
 <page xmlns="http://schemas.nativescript.org/tns.xsd"
-      xmlns:PullRefresh="@Akylas/nativescript-pulltorefresh"
+      xmlns:PullRefresh="@nativescript-community/ui-pulltorefresh"
       loaded="pageLoaded">
     <PullRefresh:PullToRefresh refresh="refreshList">
         <list-view items="{{ users }}">
@@ -91,7 +91,7 @@ exports.refreshList = refreshList;
 
 ```typescript
 import { registerElement } from "nativescript-angular/element-registry";
-registerElement("PullToRefresh", () => require("@Akylas/nativescript-pulltorefresh").PullToRefresh);
+registerElement("PullToRefresh", () => require("@nativescript-community/ui-pulltorefresh").PullToRefresh);
 
 refreshList(args) {
          const pullRefresh = args.object;
@@ -120,7 +120,7 @@ import Vue from 'nativescript-vue';
 
 Vue.registerElement(
   'PullToRefresh',
-  () => require('@Akylas/nativescript-pulltorefresh').PullToRefresh
+  () => require('@nativescript-community/ui-pulltorefresh').PullToRefresh
 );
 ```
 
