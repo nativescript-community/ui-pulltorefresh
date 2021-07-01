@@ -1,5 +1,5 @@
 <page xmlns="http://schemas.nativescript.org/tns.xsd" 
-    xmlns:PullRefresh="@Akylas/nativescript-pulltorefresh" 
+    xmlns:PullRefresh="@nativescript-community/ui-pulltorefresh" 
     xmlns:ns="nativescript-carousel" loaded="pageLoaded">
     <ActionBar title="PullToRefresh Demo" icon="">
         <ActionBar.actionItems>

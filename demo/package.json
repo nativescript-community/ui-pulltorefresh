@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "nativescript-carousel": "./nativescript-carousel-4.3.0.tgz",
-    "@Akylas/nativescript-pulltorefresh": "file:../src",
+    "@nativescript-community/ui-pulltorefresh": "file:../src",
     "nativescript-theme-core": "^1.0.4",
     "nativescript-unit-test-runner": "0.7.0",
     "@nativescript/core": "6.0.1"

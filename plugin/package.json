@@ -1,5 +1,5 @@
 {
-  "name": "@akylas/nativescript-pulltorefresh",
+  "name": "@nativescript-community/ui-pulltorefresh",
   "version": "2.4.6",
   "description": "A NativeScript plugin to provide the Pull to Refresh control on any view.",
   "main": "pulltorefresh",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akylas/nativescript-pulltorefresh"
+    "url": "https://github.com/nativescript-community/ui-pulltorefresh"
   },
   "keywords": [
     "NativeScript",
@@ -40,6 +40,6 @@
   },
   "license": "MIT",
   "readmeFilename": "README.md",
-  "bugs": "https://github.com/akylas/nativescript-pulltorefresh/issues",
-  "homepage": "https://github.com/akylas/nativescript-pulltorefresh"
+  "bugs": "https://github.com/nativescript-community/ui-pulltorefresh/issues",
+  "homepage": "https://github.com/nativescript-community/ui-pulltorefresh"
 }

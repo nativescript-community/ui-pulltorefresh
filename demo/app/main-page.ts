@@ -1,4 +1,4 @@
-import { PullToRefresh } from '@Akylas/nativescript-pulltorefresh';
+import { PullToRefresh } from '@nativescript-community/ui-pulltorefresh';
 import * as app from '@nativescript/core/application';
 import { Color } from '@nativescript/core/color';
 import { fromObject } from '@nativescript/core/data/observable';
