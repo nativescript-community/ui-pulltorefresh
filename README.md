@@ -21,11 +21,6 @@ NativeScript plugin to use Pull to Refresh on any view.
     <a href="https://github.com/nativescript-community/ui-pulltorefresh/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/nativescript-community/ui-pulltorefresh.svg" alt="license">
     </a>
-    <a href="https://nstudio.io">
-      <img src="https://github.com/nstudio/media/blob/master/images/nstudio-banner.png?raw=true" alt="nStudio banner">
-    </a>
-    <h5 align="center">Do you need assistance on your project or plugin? Contact the nStudio team anytime at <a href="mailto:team@nstudio.io">team@nstudio.io</a> to get up to speed with the best practices in mobile and web app development.
-    </h5>
 </p>
 
 ---
