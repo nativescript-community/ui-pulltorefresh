@@ -12,15 +12,6 @@ NativeScript plugin to use Pull to Refresh on any view.
     <a href="https://www.npmjs.com/package/@nativescript-community/ui-pulltorefresh">
         <img src="https://img.shields.io/npm/dt/@nativescript-community/ui-pulltorefresh.svg?label=npm%20downloads" alt="npm">
     </a>
-    <a href="https://github.com/nativescript-community/ui-pulltorefresh/stargazers">
-        <img src="https://img.shields.io/github/stars/nativescript-community/ui-pulltorefresh.svg" alt="stars">
-    </a>
-     <a href="https://github.com/nativescript-community/ui-pulltorefresh/network">
-        <img src="https://img.shields.io/github/forks/nativescript-community/ui-pulltorefresh.svg" alt="forks">
-    </a>
-    <a href="https://github.com/nativescript-community/ui-pulltorefresh/blob/master/LICENSE">
-        <img src="https://img.shields.io/github/license/nativescript-community/ui-pulltorefresh.svg" alt="license">
-    </a>
 </p>
 
 ---
