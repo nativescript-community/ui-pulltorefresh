@@ -4,7 +4,7 @@ import {
   colorProperty,
   Utils,
 } from '@nativescript/core';
-import { PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
+import { indicatorColorProperty, indicatorColorStyleProperty, indicatorFillColorProperty, indicatorFillColorStyleProperty, PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
 export * from './pulltorefresh-common';
 
@@ -135,6 +135,50 @@ export class PullToRefresh extends PullToRefreshBase {
   [backgroundColorProperty.setNative](value: Color | UIColor) {
     const color = value instanceof Color ? value.ios : value;
 
+    this.refreshControl.backgroundColor = color;
+  }
+
+  [indicatorColorProperty.getDefault](): UIColor {
+    return this.refreshControl.tintColor;
+  }
+
+  [indicatorColorProperty.setNative](value: any) {
+    const color = value ? value.ios : this.color;
+    this.refreshControl.tintColor = color;
+  }
+
+  [indicatorColorStyleProperty.getDefault](): UIColor {
+    return this.refreshControl.tintColor;
+  }
+
+  [indicatorColorStyleProperty.setNative](value: any) {
+    // Inline property has priority
+    if ((this as any).indicatorColor) {
+      return;
+    }
+    const color = value ? value.ios : this.color;
+    this.refreshControl.tintColor = color;
+  }
+
+  [indicatorFillColorProperty.getDefault](): UIColor {
+    return this.refreshControl.backgroundColor;
+  }
+
+  [indicatorFillColorProperty.setNative](value: any) {
+    const color = value ? value.ios : this.backgroundColor;
+    this.refreshControl.backgroundColor = color;
+  }
+
+  [indicatorFillColorStyleProperty.getDefault](): UIColor {
+    return this.refreshControl.backgroundColor;
+  }
+
+  [indicatorFillColorStyleProperty.setNative](value: any) {
+    // Inline property has priority
+    if ((this as any).indicatorFillColor) {
+      return;
+    }
+    const color = value ? value.ios : this.backgroundColor;
     this.refreshControl.backgroundColor = color;
   }
 }
