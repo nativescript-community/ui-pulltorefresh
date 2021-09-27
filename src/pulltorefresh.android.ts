@@ -1,6 +1,6 @@
 import { backgroundColorProperty, colorProperty } from '@nativescript/core';
 import { Color } from '@nativescript/core/color';
-import { PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
+import { indicatorColorProperty, indicatorColorStyleProperty, indicatorFillColorProperty, indicatorFillColorStyleProperty, PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
 export * from './pulltorefresh-common';
 
@@ -60,6 +60,34 @@ export class PullToRefresh extends PullToRefreshBase {
 
   [backgroundColorProperty.setNative](value: Color | number) {
     const color = value instanceof Color ? value.android : value;
+    this.nativeView.setProgressBackgroundColorSchemeColor(color);
+  }
+
+  [indicatorColorProperty.setNative](value: any) {
+    const color = value ? value.android : this.color;
+    this.nativeView.setColorSchemeColors([color]);
+  }
+
+  [indicatorColorStyleProperty.setNative](value: any) {
+    // Inline property has priority
+    if ((this as any).indicatorColor) {
+      return;
+    }
+    const color = value ? value.android : this.color;
+    this.nativeView.setColorSchemeColors([color]);
+  }
+
+  [indicatorFillColorProperty.setNative](value: any) {
+    const color = value ? value.android : this.backgroundColor;
+    this.nativeView.setProgressBackgroundColorSchemeColor(color);
+  }
+
+  [indicatorFillColorStyleProperty.setNative](value: any) {
+    // Inline property has priority
+    if ((this as any).indicatorFillColor) {
+      return;
+    }
+    const color = value ? value.android : this.backgroundColor;
     this.nativeView.setProgressBackgroundColorSchemeColor(color);
   }
 }
