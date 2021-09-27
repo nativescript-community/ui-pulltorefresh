@@ -4,6 +4,7 @@
 *.sln
 demo/
 node_modules/
+pnpm-global/
 screens/
 *.gitattributes
 *.ts
