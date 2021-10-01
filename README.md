@@ -76,8 +76,9 @@ exports.refreshList = refreshList;
 ### Angular NativeScript
 
 ```typescript
-import { registerElement } from "nativescript-angular/element-registry";
-registerElement("PullToRefresh", () => require("@nativescript-community/ui-pulltorefresh").PullToRefresh);
+import { registerElement } from '@nativescript/angular';
+import { PullToRefresh } from '@nativescript-community/ui-pulltorefresh';
+registerElement('PullToRefresh', () => PullToRefresh);
 
 refreshList(args) {
          const pullRefresh = args.object;
