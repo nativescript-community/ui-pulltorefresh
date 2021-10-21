@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.9...v2.5.0) (2021-10-21)
+
+
+### Features
+
+* **android:** native-api-usage ([19397fd](https://github.com/nativescript-community/ui-pulltorefresh/commit/19397fdb8b11ac2f6b47a31c8958a8fa92bf97bf))
+
+
+
+
+
 ## [2.4.9](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.8...v2.4.9) (2021-09-27)
 
 **Note:** Version bump only for package @nativescript-community/ui-pulltorefresh
