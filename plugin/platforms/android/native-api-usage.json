@@ -1,0 +1,7 @@
+{
+    "uses": [
+        "com.nativescript.swiperefreshlayout:CarouselFriendlySwipeRefreshLayout*",
+        "androidx.swiperefreshlayout.widget:SwipeRefreshLayout*",
+        "androidx.swiperefreshlayout.widget.SwipeRefreshLayout:OnRefreshListener*"
+    ]
+}
