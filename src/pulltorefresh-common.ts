@@ -8,6 +8,22 @@ export class PullToRefreshBase
   public static refreshEvent = 'refresh';
 
   public refreshing: boolean;
+
+  get indicatorColor(): Color {
+    return (this.style as any).indicatorColor;
+  }
+
+  set indicatorColor(value: Color) {
+    (this.style as any).indicatorColor = value;
+  }
+
+  get indicatorFillColor(): Color {
+    return (this.style as any).indicatorFillColor;
+  }
+
+  set indicatorFillColor(value: Color) {
+    (this.style as any).indicatorFillColor = value;
+  }
 }
 
 export const refreshingProperty = new Property<PullToRefreshBase, boolean>({
