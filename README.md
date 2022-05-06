@@ -18,7 +18,7 @@ NativeScript plugin to use Pull to Refresh on any view.
 
 ## Installation
 
-`tns plugin add @nativescript-community/ui-pulltorefresh`
+`ns plugin add @nativescript-community/ui-pulltorefresh`
 
 #### [Android - _SwipeRefreshLayout_](http://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)
 
@@ -43,7 +43,7 @@ NativeScript plugin to use Pull to Refresh on any view.
     <PullRefresh:PullToRefresh refresh="refreshList">
         <list-view items="{{ users }}">
             <list-view.itemTemplate>
-                <label text="{{ name }}" row="0" col="1"textWrap="true" class="message" />
+                <label text="{{ name }}" row="0" col="1" textWrap="true" class="message" />
             </list-view.itemTemplate>
         </list-view>
     </PullRefresh:PullToRefresh>
@@ -146,6 +146,8 @@ export default {
 - **refresh : function** _required_
 - **refreshing: boolean** - Notifies the widget that the refresh state has
   changed.
+- **indicatorColor: Color** - The color of the indicator icon.
+- **indicatorFillColor: Color** - The background color of the indicator.
 
 ## [Changelog](./CHANGELOG.md)
 
