@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:ptr="@nativescript-community/ui-pulltorefresh" navigatingTo="navigatingTo">
   <ActionBar title="demo" />
   <GridLayout>
-    <ptr:PullToRefresh refresh="refreshList" indicatorColor="red" indicatorFillColor="lightgray">
+    <ptr:PullToRefresh indicatorColor="red" indicatorFillColor="lightgray" refresh="refreshList">
       <ListView items="{{ items }}">
         <ListView.template>
           <StackLayout>
