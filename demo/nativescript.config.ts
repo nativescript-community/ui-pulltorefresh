@@ -1,8 +1,8 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.demongpulltorefresh',
-  appPath: 'src',
+  id: 'org.nativescript.demopulltorefresh',
+  appPath: 'app',
   appResourcesPath: 'App_Resources',
   android: {
     v8Flags: '--expose_gc',

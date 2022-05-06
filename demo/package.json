@@ -1,33 +1,17 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.pulltorefresh",
-    "tns-ios": {
-      "version": "6.0.1"
-    },
-    "tns-android": {
-      "version": "6.0.0"
-    }
-  },
+  "name": "demo",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "nativescript-carousel": "./nativescript-carousel-4.3.0.tgz",
-    "@nativescript-community/ui-pulltorefresh": "file:../src",
-    "nativescript-theme-core": "^1.0.4",
-    "nativescript-unit-test-runner": "0.7.0",
-    "@nativescript/core": "6.0.1"
+    "@nativescript-community/ui-pulltorefresh": "file:../plugin",
+    "@nativescript/core": "~8.2.0",
+    "@nativescript/theme": "~3.0.2"
   },
   "devDependencies": {
-    "jasmine-core": "3.3.0",
-    "karma": "4.1.0",
-    "karma-jasmine": "2.0.1",
-    "karma-nativescript-launcher": "0.4.0",
-    "nativescript-dev-webpack": "1.0.1",
-    "tns-platform-declarations": "6.0.1",
-    "tslint": "~5.13.1",
-    "typescript": "3.4.5",
-    "karma-webpack": "3.0.5"
-  },
-  "scripts": {
-    "build.plugin": "cd ../src && npm run build",
-    "ci.tslint": "npm i && tslint --config '../tslint.json' 'app/**/*.ts' --exclude '**/node_modules/**' --exclude '**/platforms/**'"
+    "@nativescript/android": "8.2.2",
+    "@nativescript/types": "~8.2.0",
+    "@nativescript/webpack": "~5.0.6",
+    "typescript": "~4.5.5"
   }
 }
