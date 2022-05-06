@@ -4,27 +4,29 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@angular/animations": "^12.2.0",
-    "@angular/common": "^12.2.0",
-    "@angular/compiler": "^12.2.0",
-    "@angular/core": "^12.2.0",
-    "@angular/forms": "^12.2.0",
-    "@angular/platform-browser": "^12.2.0",
-    "@angular/platform-browser-dynamic": "^12.2.0",
-    "@angular/router": "^12.2.0",
-    "@nativescript/angular": "^12.2.0",
-    "@nativescript/core": "~8.1.1",
-    "@nativescript/theme": "~3.0.1",
+    "@angular-devkit/build-angular": "^13.3.5",
+    "@angular/animations": "^13.3.6",
+    "@angular/common": "^13.3.6",
+    "@angular/compiler": "^13.3.6",
+    "@angular/core": "^13.3.6",
+    "@angular/forms": "^13.3.6",
+    "@angular/platform-browser": "^13.3.6",
+    "@angular/platform-browser-dynamic": "^13.3.6",
+    "@angular/router": "^13.3.6",
     "@nativescript-community/ui-pulltorefresh": "file:../plugin",
-    "rxjs": "~7.3.0",
-    "zone.js": "~0.11.4"
+    "@nativescript/angular": "^13.0.3",
+    "@nativescript/core": "~8.2.3",
+    "@nativescript/theme": "~3.0.2",
+    "rxjs": "~7.5.5",
+    "zone.js": "~0.11.5"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^12.2.0",
-    "@nativescript/ios": "8.1.0",
-    "@nativescript/types": "~8.1.1",
-    "@nativescript/webpack": "~5.0.0",
-    "@ngtools/webpack": "^12.2.0",
-    "typescript": "~4.3.5"
+    "@angular/compiler-cli": "^13.3.6",
+    "@nativescript/android": "8.2.2",
+    "@nativescript/ios": "8.2.3",
+    "@nativescript/types": "~8.2.0",
+    "@nativescript/webpack": "~5.0.6",
+    "@ngtools/webpack": "^13.3.5",
+    "typescript": "~4.6.4"
   }
 }
