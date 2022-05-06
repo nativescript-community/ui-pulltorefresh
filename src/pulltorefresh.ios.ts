@@ -4,7 +4,7 @@ import {
   colorProperty,
   Utils,
 } from '@nativescript/core';
-import { indicatorColorProperty, indicatorColorStyleProperty, indicatorFillColorProperty, indicatorFillColorStyleProperty, PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
+import { indicatorColorProperty, indicatorFillColorProperty, PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
 
 export * from './pulltorefresh-common';
 
@@ -37,18 +37,18 @@ class PullToRefreshHandler extends NSObject {
 const SUPPORT_REFRESH_CONTROL = Utils.ios.MajorVersion >= 10;
 
 export class PullToRefresh extends PullToRefreshBase {
-  private _handler: PullToRefreshHandler;
+  private mHandler: PullToRefreshHandler;
 
   // NOTE: We cannot use the default ios property as the UIRefreshControl can be added only to UIScrollViews!
-  public refreshControl: UIRefreshControl;
+  private mRefreshControl: UIRefreshControl;
 
   constructor() {
     super();
 
-    this.refreshControl = UIRefreshControl.alloc().init();
-    this._handler = PullToRefreshHandler.initWithOnwer(new WeakRef(this));
-    this.refreshControl.addTargetActionForControlEvents(
-      this._handler,
+    this.mRefreshControl = UIRefreshControl.alloc().init();
+    this.mHandler = PullToRefreshHandler.initWithOnwer(new WeakRef(this));
+    this.mRefreshControl.addTargetActionForControlEvents(
+      this.mHandler,
       'handleRefresh',
       UIControlEvents.ValueChanged
     );
@@ -62,45 +62,45 @@ export class PullToRefresh extends PullToRefreshBase {
     if (!newView || !newView.nativeViewProtected) {
       return;
     }
-    const nNewView = newView.nativeViewProtected;
-    if (nNewView instanceof UIScrollView) {
+    const owner = newView.nativeViewProtected;
+    if (owner instanceof UIScrollView) {
       if (SUPPORT_REFRESH_CONTROL) {
-        nNewView.refreshControl = this.refreshControl;
+        owner.refreshControl = this.mRefreshControl;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        nNewView.alwaysBounceVertical = true;
+        owner.alwaysBounceVertical = true;
 
-        nNewView.addSubview(this.refreshControl);
+        owner.addSubview(this.mRefreshControl);
       }
-    } else if (nNewView instanceof WKWebView) {
+    } else if (owner instanceof WKWebView) {
       if (SUPPORT_REFRESH_CONTROL) {
-        nNewView.scrollView.refreshControl = this.refreshControl;
+        owner.scrollView.refreshControl = this.mRefreshControl;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        nNewView.scrollView.alwaysBounceVertical = true;
+        owner.scrollView.alwaysBounceVertical = true;
 
-        nNewView.scrollView.addSubview(this.refreshControl);
+        owner.scrollView.addSubview(this.mRefreshControl);
       }
     } else if (
       typeof TKListView !== 'undefined' &&
-      nNewView instanceof TKListView
+      owner instanceof TKListView
     ) {
       if (SUPPORT_REFRESH_CONTROL) {
-        nNewView.collectionView.refreshControl = this.refreshControl;
+        owner.collectionView.refreshControl = this.mRefreshControl;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        nNewView.collectionView.alwaysBounceVertical = true;
+        owner.collectionView.alwaysBounceVertical = true;
 
-        nNewView.collectionView.addSubview(this.refreshControl);
+        owner.collectionView.addSubview(this.mRefreshControl);
       }
-    } else if (nNewView instanceof WKWebView) {
+    } else if (owner instanceof WKWebView) {
       if (SUPPORT_REFRESH_CONTROL) {
-        nNewView.scrollView.refreshControl = this.refreshControl;
+        owner.scrollView.refreshControl = this.mRefreshControl;
       } else {
         // ensure that we can trigger the refresh, even if the content is not large enough
-        nNewView.scrollView.alwaysBounceVertical = true;
+        owner.scrollView.alwaysBounceVertical = true;
 
-        nNewView.scrollView.addSubview(this.refreshControl);
+        owner.scrollView.addSubview(this.mRefreshControl);
       }
     } else {
       throw new Error(
@@ -109,76 +109,29 @@ export class PullToRefresh extends PullToRefreshBase {
     }
   }
 
-  [refreshingProperty.getDefault](): boolean {
-    return false;
-  }
   [refreshingProperty.setNative](value: boolean) {
     if (value) {
-      this.refreshControl.beginRefreshing();
+      this.mRefreshControl.beginRefreshing();
     } else {
-      this.refreshControl.endRefreshing();
+      this.mRefreshControl.endRefreshing();
     }
-  }
-
-  [colorProperty.getDefault](): UIColor {
-    return this.refreshControl.tintColor;
-  }
-  [colorProperty.setNative](value: Color | UIColor) {
-    const color = value instanceof Color ? value.ios : value;
-
-    this.refreshControl.tintColor = color;
-  }
-
-  [backgroundColorProperty.getDefault](): UIColor {
-    return this.refreshControl.backgroundColor;
-  }
-  [backgroundColorProperty.setNative](value: Color | UIColor) {
-    const color = value instanceof Color ? value.ios : value;
-
-    this.refreshControl.backgroundColor = color;
   }
 
   [indicatorColorProperty.getDefault](): UIColor {
-    return this.refreshControl.tintColor;
+    return this.mRefreshControl.tintColor;
   }
 
   [indicatorColorProperty.setNative](value: any) {
-    const color = value ? value.ios : this.color;
-    this.refreshControl.tintColor = color;
-  }
-
-  [indicatorColorStyleProperty.getDefault](): UIColor {
-    return this.refreshControl.tintColor;
-  }
-
-  [indicatorColorStyleProperty.setNative](value: any) {
-    // Inline property has priority
-    if ((this as any).indicatorColor) {
-      return;
-    }
-    const color = value ? value.ios : this.color;
-    this.refreshControl.tintColor = color;
+    const color = value ? value.ios : null;
+    this.mRefreshControl.tintColor = color;
   }
 
   [indicatorFillColorProperty.getDefault](): UIColor {
-    return this.refreshControl.backgroundColor;
+    return this.mRefreshControl.backgroundColor;
   }
 
   [indicatorFillColorProperty.setNative](value: any) {
-    const color = value ? value.ios : this.backgroundColor;
-    this.refreshControl.backgroundColor = color;
-  }
-
-  [indicatorFillColorStyleProperty.getDefault](): UIColor {
-    return this.refreshControl.backgroundColor;
-  }
-
-  [indicatorFillColorStyleProperty.setNative](value: any) {
-    // Inline property has priority
-    if ((this as any).indicatorFillColor) {
-      return;
-    }
-    const color = value ? value.ios : this.backgroundColor;
-    this.refreshControl.backgroundColor = color;
+    const color = value ? value.ios : null;
+    this.mRefreshControl.backgroundColor = color;
   }
 }
