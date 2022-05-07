@@ -1,4 +1,4 @@
-import { Color, ContentView, CssProperty, CSSType, Property, Style, View } from '@nativescript/core';
+import { Color, ContentView, CssProperty, CSSType, Property, Style } from '@nativescript/core';
 import { PullToRefresh as PullToRefreshDefinition } from '.';
 
 @CSSType('PullToRefresh')
@@ -9,18 +9,20 @@ export class PullToRefreshBase
 
   public refreshing: boolean;
 
-  public _addChildFromBuilder(name: string, value: any) {
-    // copy inheritable style property values
-    const originalColor = value.style.color || null;
-    const originaBackgroundColor = value.style.backgroundColor || null;
+  get indicatorColor(): Color {
+    return (this.style as any).indicatorColor;
+  }
 
-    if (value instanceof View) {
-      this.content = value;
-    }
+  set indicatorColor(value: Color) {
+    (this.style as any).indicatorColor = value;
+  }
 
-    // reset inheritable style property values as we do not want those to be inherited
-    value.style.color = originalColor;
-    value.style.backgroundColor = originaBackgroundColor;
+  get indicatorFillColor(): Color {
+    return (this.style as any).indicatorFillColor;
+  }
+
+  set indicatorFillColor(value: Color) {
+    (this.style as any).indicatorFillColor = value;
   }
 }
 
@@ -30,52 +32,18 @@ export const refreshingProperty = new Property<PullToRefreshBase, boolean>({
 });
 refreshingProperty.register(PullToRefreshBase);
 
-export const indicatorColorProperty = new Property<PullToRefreshBase, Color>({
+export const indicatorColorProperty = new CssProperty<Style, Color>({
   name: 'indicatorColor',
-  affectsLayout: true,
-  valueConverter: (v) => {
-    if (!Color.isValid(v)) {
-      return null;
-    }
-    return new Color(v);
-  },
-});
-indicatorColorProperty.register(PullToRefreshBase);
-
-export const indicatorColorStyleProperty = new CssProperty<Style, Color>({
-  name: 'indicatorColorStyle',
   cssName: 'indicator-color',
-  affectsLayout: true,
-  valueConverter: (v) => {
-    if (!Color.isValid(v)) {
-      return null;
-    }
-    return new Color(v);
-  },
+  equalityComparer: Color.equals,
+  valueConverter: (v) => new Color(v),
 });
-indicatorColorStyleProperty.register(Style);
+indicatorColorProperty.register(Style);
 
-export const indicatorFillColorProperty = new Property<PullToRefreshBase, Color>({
+export const indicatorFillColorProperty = new CssProperty<Style, Color>({
   name: 'indicatorFillColor',
-  affectsLayout: true,
-  valueConverter: (v) => {
-    if (!Color.isValid(v)) {
-      return null;
-    }
-    return new Color(v);
-  },
-});
-indicatorFillColorProperty.register(PullToRefreshBase);
-
-export const indicatorFillColorStyleProperty = new CssProperty<Style, Color>({
-  name: 'indicatorFillColorStyle',
   cssName: 'indicator-fill-color',
-  affectsLayout: true,
-  valueConverter: (v) => {
-    if (!Color.isValid(v)) {
-      return null;
-    }
-    return new Color(v);
-  },
+  equalityComparer: Color.equals,
+  valueConverter: (v) => new Color(v),
 });
-indicatorFillColorStyleProperty.register(Style);
+indicatorFillColorProperty.register(Style);

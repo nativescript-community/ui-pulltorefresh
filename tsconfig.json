@@ -28,7 +28,7 @@
       "tns-core-modules/*": ["./node_modules/@nativescript/core/*"]
     },
     "plugins": [
-      { "transform": "@nativescript/webpack/transformers/ns-transform-native-classes", "type": "raw" }
+      { "transform": "@nativescript/webpack/dist/transformers/NativeClass", "type": "raw" }
     ]
   },
   "include": ["src/**/*.ts", "references.d.ts", "src/references.d.ts"],
