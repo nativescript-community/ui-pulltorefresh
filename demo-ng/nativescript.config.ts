@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.demong',
+  id: 'org.nativescript.demongpulltorefresh',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {
