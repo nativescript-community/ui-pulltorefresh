@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.0...v2.5.1) (2022-05-09)
+
+
+### Bug Fixes
+
+* Indicator styling properties inline support. ([f051802](https://github.com/nativescript-community/ui-pulltorefresh/commit/f051802a9b26ab7d5dcf70b1a09863025e05d8f0))
+* Removed method that prevented color style inheritance. ([e62ed03](https://github.com/nativescript-community/ui-pulltorefresh/commit/e62ed03031d9e373e2e376194da269386521b084))
+
+
+
+
+
 # [2.5.0](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.9...v2.5.0) (2021-10-21)
 
 
