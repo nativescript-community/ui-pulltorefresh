@@ -16,13 +16,17 @@ export class PullToRefresh extends PullToRefreshBase {
   public initNativeView() {
     super.initNativeView();
 
+    const weakRef = new WeakRef(this);
     const androidXListener = new androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener({
       onRefresh: () => {
-        this.refreshing = true;
-        this.notify({
-          eventName: PullToRefreshBase.refreshEvent,
-          object: this,
-        });
+        const owner = weakRef.get();
+        if (owner) {
+            owner.refreshing = true;
+            owner.notify({
+                eventName: PullToRefreshBase.refreshEvent,
+                object: owner,
+            });    
+        }
       },
     });
     this.nativeViewProtected.setOnRefreshListener(androidXListener);
