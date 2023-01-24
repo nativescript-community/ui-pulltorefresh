@@ -19,7 +19,7 @@
   "scripts": {
     "setup": "ts-patch install",
     "prepare": "npm run setup",
-    "tsc": "cpy '**/*.d.ts' '../plugin' --parents --cwd=src && cp README.md plugin && tsc -skipLibCheck",
+    "tsc": "cpy './**/*.d.ts' 'plugin' --parents --cwd=src && cp README.md plugin && tsc -skipLibCheck",
     "clean": "rimraf ./plugin/**/*.d.ts ./plugin/**/*.js ./plugin/**/*.js.map ./plugin/**/*.metadata.json plugin/node_modules plugin/package-lock.json",
     "build": "npm run tsc",
     "publish": "npm run setup && npm run build && lerna publish --create-release=github --force-publish",
@@ -61,7 +61,7 @@
     "@types/node": "^17.0.31",
     "@typescript-eslint/eslint-plugin": "5.22.0",
     "@typescript-eslint/parser": "5.22.0",
-    "cpy-cli": "4.1.0",
+    "cpy-cli": "4.2.0",
     "eslint": "8.14.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
