@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.3](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.2...v2.5.3) (2023-01-24)
+
+
+### Bug Fixes
+
+* cpy fix which would prevent typings in published package ([bc4e8eb](https://github.com/nativescript-community/ui-pulltorefresh/commit/bc4e8eb3d24323091daa9a9178a34363d84f7961))
+
+
+
+
+
 ## [2.5.2](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.1...v2.5.2) (2023-01-24)
 
 
