@@ -2,7 +2,7 @@
   "name": "@nativescript-community/ui-pulltorefresh",
   "version": "2.5.3",
   "description": "A NativeScript plugin to provide the Pull to Refresh control on any view.",
-  "main": "pulltorefresh",
+  "main": "index",
   "typings": "index.d.ts",
   "sideEffects": false,
   "nativescript": {
@@ -16,6 +16,16 @@
       "core3": "true",
       "category": "Interface"
     }
+  },
+  "scripts": {
+      "tsc": "cpy ../../src/pulltorefresh/index.d.ts ./ && tsc -d",
+      "readme": "readme generate -c ../../tools/readme/blueprint.json",
+      "build": "npm run tsc",
+      "build.watch": "npm run tsc -- -w",
+      "build.win": "npm run tsc-win",
+      "build.all": "npm run build",
+      "build.angular": "ng-packagr -p ../../src/pulltorefresh/angular/ng-package.json -c ../../src/pulltorefresh/angular/tsconfig.json && rm angular/.npmignore",
+      "clean": "rimraf ./*.d.ts ./*.js ./*.js.map"
   },
   "repository": {
     "type": "git",

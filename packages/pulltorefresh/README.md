@@ -1,4 +1,4 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️--><!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
+<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
 <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -35,9 +35,6 @@
 | <img src="https://raw.githubusercontent.com/nativescript-community/ui-pulltorefresh/master/screens/ios_refresh.gif" height="500" /> | <img src="https://raw.githubusercontent.com/nativescript-community/ui-pulltorefresh/master/screens/android_refresh.gif" height="500" /> |
 | --- | ----------- |
 | iOS Demo | Android Demo |
-
-
-[](#table-of-contents)
 
 
 [](#table-of-contents)
@@ -80,9 +77,6 @@
 
 [](#installation)
 
-
-[](#installation)
-
 ## Installation
 Run the following command from the root of your project:
 
@@ -91,9 +85,6 @@ Run the following command from the root of your project:
 #### [Android - _SwipeRefreshLayout_](http://developer.android.com/reference/android/support/v4/widget/SwipeRefreshLayout.html)
 
 #### [iOS - _UIRefreshControl_](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/)
-
-
-[](#usage)
 
 
 [](#usage)
@@ -190,9 +181,6 @@ export class HomeComponent {
 
 [](#nativescript-vue)
 
-
-[](#nativescript-vue)
-
 ## NativeScript Vue
 
 ### Bootstrap
@@ -239,9 +227,6 @@ This will install and register `LottieView` component to your `Vue` instance and
 
 [](#assets)
 
-
-[](#assets)
-
 ## Assets
 
 :fire: You can find animations in the `sample-effects` folder.
@@ -259,9 +244,6 @@ Place your animations files in your `app/App_Resources/iOS/` folder.
 
 [](#properties-bindable)
 
-
-[](#properties-bindable)
-
 ## Properties (bindable)
 
 | Property   | Type      | Default | Description                                   |
@@ -269,9 +251,6 @@ Place your animations files in your `app/App_Resources/iOS/` folder.
 | `autoPlay` | `boolean` | `false` | Start LottieView animation on load if `true`. |
 | `loop`     | `boolean` | `false` | Loop continuously animation if `true`.        |
 | `src`      | `string`  | `null`  | Animation path to `.json` file.               |
-
-
-[](#properties)
 
 
 [](#properties)
@@ -284,9 +263,6 @@ Place your animations files in your `app/App_Resources/iOS/` folder.
 | `duration`        | `number`            | `null`  | Get the duration of the animation.                                                                                                                        |
 | `progress`        | `number`            | `0`     | Get/set the progress of the animation.                                                                                                                    |
 | `speed`           | `number`            | `1`     | Get/set the speed of the animation.                                                                                                                       |
-
-
-[](#methods)
 
 
 [](#methods)
@@ -305,9 +281,6 @@ Place your animations files in your `app/App_Resources/iOS/` folder.
 
 [](#contributors)
 
-
-[](#contributors)
-
 ## Contributors
 
 | [<img alt="Brad Martin" src="https://avatars0.githubusercontent.com/u/6006148?s=400&v=4" width="117">](https://github.com/bradmartin) | [<img alt="Nathan Walker" src="https://avatars0.githubusercontent.com/u/457187?s=400&v=4" width="117">](https://github.com/NathanWalker/) | [<img alt="Jean-Baptiste Aniel" src="https://avatars3.githubusercontent.com/u/9477179?s=460&v=4" width="117">](https://github.com/rhanb) | [<img alt="HamdiWanis" src="https://avatars3.githubusercontent.com/u/11708544?s=460&v=4" width="117">](https://github.com/hamdiwanis) |
@@ -322,114 +295,6 @@ Place your animations files in your `app/App_Resources/iOS/` folder.
 
 [](#demos-and-development)
 
-
-[](#demos-and-development)
-
-## Demos and Development
-
-
-### Repo Setup
-
-The repo uses submodules. If you did not clone with ` --recursive` then you need to call
-```
-git submodule update --init
-```
-
-The package manager used to install and link dependencies must be `pnpm` or `yarn`. `npm` wont work.
-
-To develop and test:
-if you use `yarn` then run `yarn`
-if you use `pnpm` then run `pnpm i`
-
-**Interactive Menu:**
-
-To start the interactive menu, run `npm start` (or `yarn start` or `pnpm start`). This will list all of the commonly used scripts.
-
-### Build
-
-```bash
-npm run build.all
-```
-WARNING: it seems `yarn build.all` wont always work (not finding binaries in `node_modules/.bin`) which is why the doc explicitly uses `npm run`
-
-### Demos
-
-```bash
-npm run demo.[ng|react|svelte|vue].[ios|android]
-
-npm run demo.svelte.ios # Example
-```
-
-Demo setup is a bit special in the sense that if you want to modify/add demos you dont work directly in `demo-[ng|react|svelte|vue]`
-Instead you work in `demo-snippets/[ng|react|svelte|vue]`
-You can start from the `install.ts` of each flavor to see how to register new demos 
-
-
-[](#contributing)
-
-
-[](#contributing)
-
-## Contributing
-
-### Update repo 
-
-You can update the repo files quite easily
-
-First update the submodules
-
-```bash
-npm run update
-```
-
-Then commit the changes
-Then update common files
-
-```bash
-npm run sync
-```
-Then you can run `yarn|pnpm`, commit changed files if any
-
-### Update readme 
-```bash
-npm run readme
-```
-
-### Update doc 
-```bash
-npm run doc
-```
-
-### Publish
-
-The publishing is completely handled by `lerna` (you can add `-- --bump major` to force a major release)
-Simply run 
-```shell
-npm run publish
-```
-
-### modifying submodules
-
-The repo uses https:// for submodules which means you won't be able to push directly into the submodules.
-One easy solution is t modify `~/.gitconfig` and add
-```
-[url "ssh://git@github.com/"]
-	pushInsteadOf = https://github.com/
-```
-
-
-[](#questions)
-
-
-[](#questions)
-
-## Questions
-
-If you have any questions/issues/comments please feel free to create an issue or start a conversation in the [NativeScript Community Discord](https://nativescript.org/discord).
-
-
-[](#demos-and-development)
-
 ## Demos and Development
 
 
@@ -518,6 +383,7 @@ One easy solution is t modify `~/.gitconfig` and add
 [url "ssh://git@github.com/"]
 	pushInsteadOf = https://github.com/
 ```
+
 
 [](#questions)
 

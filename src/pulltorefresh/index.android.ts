@@ -1,14 +1,18 @@
-import { backgroundColorProperty, colorProperty } from '@nativescript/core';
-import { Color } from '@nativescript/core/color';
-import { indicatorColorProperty, indicatorFillColorProperty, PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
+import {
+  PullToRefreshBase,
+  indicatorColorProperty,
+  indicatorFillColorProperty,
+  refreshingProperty,
+} from './index.common';
 
-export * from './pulltorefresh-common';
+export * from './index.common';
 
 export class PullToRefresh extends PullToRefreshBase {
   public createNativeView() {
-    const swipeRefreshLayout = new com.nativescript.swiperefreshlayout.CarouselFriendlySwipeRefreshLayout(
-      this._context
-    );
+    const swipeRefreshLayout =
+      new com.nativescript.swiperefreshlayout.CarouselFriendlySwipeRefreshLayout(
+        this._context,
+      );
 
     return swipeRefreshLayout;
   }
@@ -16,15 +20,18 @@ export class PullToRefresh extends PullToRefreshBase {
   public initNativeView() {
     super.initNativeView();
 
-    const androidXListener = new androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener({
-      onRefresh: () => {
-        this.refreshing = true;
-        this.notify({
-          eventName: PullToRefreshBase.refreshEvent,
-          object: this,
-        });
-      },
-    });
+    const androidXListener =
+      new androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener(
+        {
+          onRefresh: () => {
+            this.refreshing = true;
+            this.notify({
+              eventName: PullToRefreshBase.refreshEvent,
+              object: this,
+            });
+          },
+        },
+      );
     this.nativeViewProtected.setOnRefreshListener(androidXListener);
     this.nativeViewProtected.refreshListener = androidXListener;
   }

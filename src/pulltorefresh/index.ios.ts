@@ -1,12 +1,12 @@
-import { Color } from '@nativescript/core/color';
+import { Utils } from '@nativescript/core';
 import {
-  backgroundColorProperty,
-  colorProperty,
-  Utils,
-} from '@nativescript/core';
-import { indicatorColorProperty, indicatorFillColorProperty, PullToRefreshBase, refreshingProperty } from './pulltorefresh-common';
+  PullToRefreshBase,
+  indicatorColorProperty,
+  indicatorFillColorProperty,
+  refreshingProperty,
+} from './index.common';
 
-export * from './pulltorefresh-common';
+export * from './index.common';
 
 @NativeClass
 class PullToRefreshHandler extends NSObject {
@@ -17,9 +17,9 @@ class PullToRefreshHandler extends NSObject {
   private _owner: WeakRef<PullToRefresh>;
 
   public static initWithOnwer(
-    owner: WeakRef<PullToRefresh>
+    owner: WeakRef<PullToRefresh>,
   ): PullToRefreshHandler {
-    const impl = <PullToRefreshHandler>PullToRefreshHandler.new();
+    const impl = PullToRefreshHandler.new() as PullToRefreshHandler;
     impl._owner = owner;
     return impl;
   }
@@ -50,7 +50,7 @@ export class PullToRefresh extends PullToRefreshBase {
     this.mRefreshControl.addTargetActionForControlEvents(
       this.mHandler,
       'handleRefresh',
-      UIControlEvents.ValueChanged
+      UIControlEvents.ValueChanged,
     );
   }
 
@@ -104,7 +104,7 @@ export class PullToRefresh extends PullToRefreshBase {
       }
     } else {
       throw new Error(
-        'Content must inherit from either UIScrollView or WKWebView!'
+        'Content must inherit from either UIScrollView or WKWebView!',
       );
     }
   }

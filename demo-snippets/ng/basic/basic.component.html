@@ -1,0 +1,13 @@
+<ActionBar title="demo-ng"> </ActionBar>
+
+<GridLayout>
+  <PullToRefresh indicatorColor="red" indicatorFillColor="lightgray" (refresh)="refreshList($event)">
+    <ListView [items]="items">
+      <ng-template let-item="item">
+        <StackLayout>
+          <Label [text]="item"></Label>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+  </PullToRefresh>
+</GridLayout>

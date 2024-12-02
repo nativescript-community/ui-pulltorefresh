@@ -1,37 +1,15 @@
 {
+  "extends": "./tools/tsconfig",
   "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "removeComments": false,
-    "declaration": true,
-    "noLib": false,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
-    "sourceMap": true,
-    "pretty": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noEmitHelpers": true,
-    "noEmitOnError": false,
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "outDir": "./plugin",
-    "rootDir": "src",
-    "paths": {
-      "*": ["./node_modules/*"],
-      "tns-core-modules": ["./node_modules/@nativescript/core"],
-      "tns-core-modules/*": ["./node_modules/@nativescript/core/*"]
-    },
-    "plugins": [
-      { "transform": "@nativescript/webpack/dist/transformers/NativeClass", "type": "raw" }
-    ]
+      "paths": {
+          "@nativescript-community/ui-pulltorefresh": ["src/pulltorefresh/index"],
+          "@nativescript-community/ui-pulltorefresh/*": ["src/pulltorefresh/*"]
+      }
   },
-  "include": ["src/**/*.ts", "references.d.ts", "src/references.d.ts"],
-  "exclude": ["node_modules", ".git", "dist"],
-  "compileOnSave": false
+  "references": [
+      {
+          //Need for IDE
+          "path": "./tsconfig.vue3.json"
+      }
+  ]
 }
