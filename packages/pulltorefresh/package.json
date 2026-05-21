@@ -1,6 +1,6 @@
 {
   "name": "@nativescript-community/ui-pulltorefresh",
-  "version": "2.5.9",
+  "version": "2.5.10",
   "description": "A NativeScript plugin to provide the Pull to Refresh control on any view.",
   "main": "index",
   "typings": "index.d.ts",
