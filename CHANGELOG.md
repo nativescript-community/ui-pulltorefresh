@@ -3,194 +3,132 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.5.3](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.2...v2.5.3) (2023-01-24)
+## 2.5.8 (2026-05-21)
 
+### Features
+
+* **android:** native-api-usage ([347030e](https://github.com/nativescript-community/ui-pulltorefresh/commit/347030e393a5493e169f8fcbf2be0132c3ab1469))
+* N7 and new package name ([1560c98](https://github.com/nativescript-community/ui-pulltorefresh/commit/1560c9818d938ea50c932ea1205d600677d70b62))
+* **TNS4:** Allow Nativescript 4 ([0fb923b](https://github.com/nativescript-community/ui-pulltorefresh/commit/0fb923b9b18dbaaefe7e995bafa4e5cd49b55d10))
+
+### Bug Fixes
+
+* **#29:** implement a carousel friendly swipe refresh layout ([5e39155](https://github.com/nativescript-community/ui-pulltorefresh/commit/5e39155e8a10e1e80d95ec2dda516361740323f7)), closes [#29](https://github.com/nativescript-community/ui-pulltorefresh/issues/29)
+* **android:** native-api-usage fix ([e8d7d7f](https://github.com/nativescript-community/ui-pulltorefresh/commit/e8d7d7ffc68943b420effaea4e99a4b1b0519f43))
+* cpy fix which would prevent typings in published package ([987644c](https://github.com/nativescript-community/ui-pulltorefresh/commit/987644cabc90fd03747ca387445d795447f868ed))
+* css support ([02536fc](https://github.com/nativescript-community/ui-pulltorefresh/commit/02536fcd225b3360bf5ac77cb16b09266e8b5cd5))
+* Indicator styling properties inline support. ([40ceb56](https://github.com/nativescript-community/ui-pulltorefresh/commit/40ceb564116a31513b5528c58d669e48a38a0582))
+* **ios:** actually right that way! ([367c42b](https://github.com/nativescript-community/ui-pulltorefresh/commit/367c42bdf99dd49af59bda0788534fee9c89590b))
+* **ios:** fix crash on dynamic addition ([f09fceb](https://github.com/nativescript-community/ui-pulltorefresh/commit/f09fcebfef512231d0ffe1fae89f11616b8cf14f))
+* **ios:** remove UIWebView references since it's deprecated ([aacf452](https://github.com/nativescript-community/ui-pulltorefresh/commit/aacf4522aa2db96064becaded833a19ee9802e84))
+* **ios:** should fix all cases ([55ada82](https://github.com/nativescript-community/ui-pulltorefresh/commit/55ada8287f86780c5657f533600e0905a0a58ef0))
+* native android dep update ([837b8e7](https://github.com/nativescript-community/ui-pulltorefresh/commit/837b8e7626719d2eb3bba408ae4ae5f7e20ee552))
+* Removed method that prevented color style inheritance. ([1aa505d](https://github.com/nativescript-community/ui-pulltorefresh/commit/1aa505d59344b01a5ba9a42632e13a45ffb07f31))
+* right imports for typings ([445f68d](https://github.com/nativescript-community/ui-pulltorefresh/commit/445f68d760416249da51e12c6423c597cc71a3db))
+
+## [2.5.3](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.2...v2.5.3) (2023-01-24)
 
 ### Bug Fixes
 
 * cpy fix which would prevent typings in published package ([bc4e8eb](https://github.com/nativescript-community/ui-pulltorefresh/commit/bc4e8eb3d24323091daa9a9178a34363d84f7961))
 
-
-
-
-
 ## [2.5.2](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.1...v2.5.2) (2023-01-24)
-
 
 ### Bug Fixes
 
 * **android:** native-api-usage fix ([bd540f7](https://github.com/nativescript-community/ui-pulltorefresh/commit/bd540f7e4fe87008fd90b3764c2ad9aa54cbf46a))
 
-
-
-
-
 ## [2.5.1](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.0...v2.5.1) (2022-05-09)
-
 
 ### Bug Fixes
 
 * Indicator styling properties inline support. ([f051802](https://github.com/nativescript-community/ui-pulltorefresh/commit/f051802a9b26ab7d5dcf70b1a09863025e05d8f0))
 * Removed method that prevented color style inheritance. ([e62ed03](https://github.com/nativescript-community/ui-pulltorefresh/commit/e62ed03031d9e373e2e376194da269386521b084))
 
-
-
-
-
 # [2.5.0](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.9...v2.5.0) (2021-10-21)
-
 
 ### Features
 
 * **android:** native-api-usage ([19397fd](https://github.com/nativescript-community/ui-pulltorefresh/commit/19397fdb8b11ac2f6b47a31c8958a8fa92bf97bf))
 
-
-
-
-
 ## [2.4.9](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.8...v2.4.9) (2021-09-27)
 
 **Note:** Version bump only for package @nativescript-community/ui-pulltorefresh
-
-
-
-
 
 ## [2.4.8](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.7...v2.4.8) (2021-07-08)
 
 **Note:** Version bump only for package @nativescript-community/ui-pulltorefresh
 
-
-
-
-
 ## [2.4.7](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.6...v2.4.7) (2021-07-01)
 
 **Note:** Version bump only for package @nativescript-community/ui-pulltorefresh
 
-
-
-
-
 ## [2.4.6](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.5...v2.4.6) (2021-03-14)
-
 
 ### Bug Fixes
 
 * css support ([61330dc](https://github.com/nativescript-community/ui-pulltorefresh/commit/61330dc7174a9875a418c89554294f5c2c501d0e))
 
-
-
-
-
 ## [2.4.5](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.4...v2.4.5) (2020-11-11)
-
 
 ### Bug Fixes
 
 * native android dep update ([2cd7011](https://github.com/nativescript-community/ui-pulltorefresh/commit/2cd7011e1c3e087c6985758fc3029151245245df))
 * right imports for typings ([9192209](https://github.com/nativescript-community/ui-pulltorefresh/commit/9192209e06f98b45889722fad291cd362dc6a596))
 
-
-
-
-
 ## [2.4.4](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.3...v2.4.4) (2020-11-02)
 
 **Note:** Version bump only for package @nativescript-community/ui-pulltorefresh
 
-
-
-
-
 ## [2.4.3](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.2...v2.4.3) (2020-10-06)
-
 
 ### Bug Fixes
 
 * **ios:** should fix all cases ([3fcb7ad](https://github.com/nativescript-community/ui-pulltorefresh/commit/3fcb7ad848d4c195fb55ccdfa2db9c3c0f36d381))
 
-
-
-
-
 ## [2.4.2](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.1...v2.4.2) (2020-09-30)
-
 
 ### Bug Fixes
 
 * **ios:** actually right that way! ([f41ec4d](https://github.com/nativescript-community/ui-pulltorefresh/commit/f41ec4d29e81540b77b9d6fd74211a851ad55e4d))
 
-
-
-
-
 ## [2.4.1](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.4.0...v2.4.1) (2020-09-30)
-
 
 ### Bug Fixes
 
 * **ios:** fix crash on dynamic addition ([a3613de](https://github.com/nativescript-community/ui-pulltorefresh/commit/a3613dea6432913bf6a2cf98389cd0ec16a96641))
 
-
-
-
-
 # [2.4.0](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.3.2...v2.4.0) (2020-09-07)
-
 
 ### Features
 
 * N7 and new package name ([228fd68](https://github.com/nativescript-community/ui-pulltorefresh/commit/228fd68347cc52db6693870ccf6f5a33ea334670))
 
-
-
-
-
 ## 2.3.2 (2020-02-26)
-
 
 ### Bug Fixes
 
 * **ios:** remove UIWebView references since it's deprecated ([ecca5a3](https://github.com/nativescript-community/ui-pulltorefresh/commit/ecca5a31f24679455ba4852482ae3c1d25dc63d2))
 
-
-
 ## 1.0.1 (2019-07-17)
-
 
 ### Bug Fixes
 
 * **#29:** implement a carousel friendly swipe refresh layout ([d0bb135](https://github.com/nativescript-community/ui-pulltorefresh/commit/d0bb13560721497d214097b435ea7472bd118cd7)), closes [#29](https://github.com/nativescript-community/ui-pulltorefresh/issues/29)
 
-
-
 ## 2.2.1 (2019-03-05)
 
-
-
 # 2.2.0 (2018-11-15)
-
 
 ### Features
 
 * **TNS4:** Allow Nativescript 4 ([515daa4](https://github.com/nativescript-community/ui-pulltorefresh/commit/515daa4cc9f4e7fa450485416e1646c513087e9c))
 
-
-
 # 2.1.0 (2018-02-12)
-
-
 
 ## 1.1.10 (2017-03-06)
 
-
-
 ## 1.1.8 (2016-09-08)
-
-
-
-
 
 # Change Log
 
@@ -316,7 +254,5 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - iOS implementation [\#3](https://github.com/nativescript-community/ui-pulltorefresh/pull/3) ([PeterStaev](https://github.com/PeterStaev))
 - Android styling [\#2](https://github.com/nativescript-community/ui-pulltorefresh/pull/2) ([PeterStaev](https://github.com/PeterStaev))
 - Fixes for the event [\#1](https://github.com/nativescript-community/ui-pulltorefresh/pull/1) ([NathanaelA](https://github.com/NathanaelA))
-
-
 
 \* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
