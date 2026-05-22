@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.11](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.10...v2.5.11) (2026-05-22)
+
+### Bug Fixes
+
+* **android:** Corrected platform deps folder structure to work on NS v9 ([15f57cc](https://github.com/nativescript-community/ui-pulltorefresh/commit/15f57cc390b0018aa867df337c2438c94550d62f))
+
 ## [2.5.10](https://github.com/nativescript-community/ui-pulltorefresh/compare/v2.5.9...v2.5.10) (2026-05-21)
 
 **Note:** Version bump only for package ui-pulltorefresh
